@@ -1,6 +1,6 @@
-# javaScript_overView
+# javaScript_overView (Features added from ES2015(ES6) - ES2026(ES17)
 
-## `Date()` vs `Temporal()`
+## 1.`Date()` vs `Temporal()`
 
 ### `Date()`
 
@@ -23,7 +23,7 @@ let today = Temporal.Now.plainDateISO();
 
 let updated = today.add({ weeks: 1 });
 ```
-# `file.close()` vs `using`
+# 2. `file.close()` vs `using`
 
 ## Without `using`
 
@@ -45,29 +45,8 @@ function file() {
   using file = openFile("meri_file.txt");
 }
 ```
-## `file.close()` vs `using`
 
-### Without `using`
-
-You must manually call `file.close()` or `connection.end()`. If you forget, resources may not be released.
-
-```javascript
-function file() {
-  const file = openFile("meri_file.txt");
-  file.close();
-}
-```
-
-### With `using`
-
-`using` automatically closes the file after execution.
-
-```javascript
-function file() {
-  using file = openFile("meri_file.txt");
-}
-```
-## `reduce()` vs `Math.sumPrecise()`
+## 3. `reduce()` vs `Math.sumPrecise()`
 
 ### `reduce()`
 
@@ -92,7 +71,7 @@ const total = Math.sumPrecise(items);
 console.log(total);
 // Output: 0.6
 ```
-## `instanceof` vs `Error.isError()`
+## 4.`instanceof` vs `Error.isError()`
 
 ### `instanceof`
 
@@ -121,7 +100,7 @@ try {
   }
 }
 ```
-## `[...arr, ...arr1]` vs `Iterator.concat()`
+## 5. `[...arr, ...arr1]` vs `Iterator.concat()`
 
 ### Spread Operator
 
@@ -150,7 +129,7 @@ for (const num of combined) {
   console.log(num); // 1, 2, 3, 4
 }
 ```
-## `reduce()` vs `Object.groupBy()`
+## 6.`reduce()` vs `Object.groupBy()`
 
 ### `reduce()`
 
@@ -186,7 +165,7 @@ const items = [
 
 const groups = Object.groupBy(items, item => item.type);
 ```
-## `JSON.parse()`
+## 7.`JSON.parse()`
 
 It converts a JSON string into a JavaScript object.
 
@@ -197,7 +176,7 @@ const userObject = JSON.parse(jsonString);
 console.log(userObject.name); // "Rahul"
 console.log(userObject.age);  // 25
 ```
-## Iterator Helpers (`map`, `filter`, `take`, `drop`)
+## 8. Iterator Helpers (`map`, `filter`, `take`, `drop`)
 
 These helper methods let you transform and process iterators without converting them into arrays first.
 
@@ -211,7 +190,7 @@ const result = iterator
 
 console.log(result); // [1, 3]
 ```
-## `Array.fromAsync()`
+## 9. `Array.fromAsync()`
 
 It takes data from an async source and directly converts it into an array.
 
@@ -225,7 +204,7 @@ const arr = await Array.fromAsync(asyncGen());
 
 console.log(arr); // [1, 2]
 ```
-## Pipeline Operator (`|>`)
+## 10. Pipeline Operator (`|>`)
 
 It is used to pass the output of one function directly to another function.
 
@@ -236,7 +215,7 @@ const result = double(addFive(value));
 // New way
 const result = value |> addFive |> double;
 ```
-## `Promise.withResolvers()`
+## 11. `Promise.withResolvers()`
 
 It returns an object containing `promise`, `resolve`, and `reject`, so you don't need to create them manually.
 
@@ -247,7 +226,7 @@ setTimeout(() => resolve("Kaam ho gaya!"), 1000);
 
 promise.then(msg => console.log(msg));
 ```
-## `String.isWellFormed()` & `toWellFormed()`
+## 12. `String.isWellFormed()` & `toWellFormed()`
 
 It checks whether a string contains invalid characters. `toWellFormed()` removes or replaces those invalid characters.
 
@@ -260,7 +239,7 @@ const badString = "\uD800"; // Invalid character
 
 console.log(badString.toWellFormed()); // only valid characters
 ```
-## Exponentiation Operator (`**`)
+## 13. Exponentiation Operator (`**`)
 
 If we want to find the power of a number, we can use the `Math.pow()` method. Now we can directly calculate power using the `**` operator.
 
@@ -269,7 +248,7 @@ let square = Math.pow(5, 2); // 25
 
 let cube = 2 ** 3; // 8
 ```
-## `Array.includes()`
+## 14.`Array.includes()`
 
 To check whether an element exists in an array, we used `indexOf()` which returns `-1` if the element is not found. Now, `includes()` makes it easier by returning `true` or `false`.
 
@@ -286,7 +265,7 @@ if (fruits.includes('banana')) {
     console.log("Found");
 }
 ```
-## `async` & `await`
+## 15.`async` & `await`
 
 It helps to write asynchronous code in a synchronous way. Instead of using `.then()` with promises, we can use `async` and `await`.
 
@@ -303,7 +282,7 @@ async function getData() {
   console.log(data);
 }
 ```
-## `Object.values()`
+## 16.`Object.values()`
 
 It returns object values in an array.
 
@@ -313,7 +292,7 @@ const user = { name: 'Rahul', age: 25 };
 console.log(Object.values(user)); // ['Rahul', 25]
 ```
 
-## `Object.entries()`
+## 17.`Object.entries()`
 
 It converts key-value pairs into an array format.
 
@@ -324,7 +303,7 @@ console.log(Object.entries(user));
 // [['name', 'Rahul'], ['age', 25]]
 ```
 
-## String Padding (`padStart`, `padEnd`)
+##18. String Padding (`padStart`, `padEnd`)
 
 It is used to add characters to a string with a fixed length at the start or end.
 
@@ -335,7 +314,7 @@ console.log(id.padStart(3, '0')); // "005"
 console.log(id.padEnd(3, 'x'));   // "5xx"
 ```
 
-## `Object.getOwnPropertyDescriptors()`
+## 19.`Object.getOwnPropertyDescriptors()`
 
 It shows the configuration details of object properties like writable and editable.
 
@@ -344,7 +323,7 @@ const obj = { name: 'Kanchan' };
 
 console.log(Object.getOwnPropertyDescriptors(obj));
 ```
-## Trailing Commas
+## 20. Trailing Commas
 
 We can add a comma after the last parameter or property.
 
@@ -357,7 +336,7 @@ function greet(
 }
 ```
 
-## Rest/Spread Properties (`...`)
+## 21.Rest/Spread Properties (`...`)
 
 **Rest:** It is used to store remaining properties in an object or array.
 
@@ -375,7 +354,7 @@ console.log(details); // { age: 25, city: 'Delhi' }
 // Spread
 const newUser = { ...user, country: 'India' };
 ```
-## Asynchronous Iteration (`for await...of`)
+## 22. Asynchronous Iteration (`for await...of`)
 
 If there is an `await` function inside a loop, a normal `for...of` loop does not wait for the promise to resolve. `for await...of` solves this problem by waiting until the promise is resolved.
 
@@ -393,7 +372,7 @@ async function getNumbers() {
 }
 ```
 
-## `Promise.finally()`
+## 23.`Promise.finally()`
 
 It executes in every case, whether the promise is resolved or rejected. It is useful for tasks like hiding loading spinners.
 
@@ -404,7 +383,7 @@ fetch('https://api.example.com')
   .finally(() => console.log('Loading Spinner closed!'));
 ```
 
-## `Array.flat()` / `Array.flatMap()`
+## 24.`Array.flat()` / `Array.flatMap()`
 
 **`flat()`**: Converts a nested array into a single array.
 
@@ -424,7 +403,7 @@ const nums = [1, 2, 3];
 console.log(nums.flatMap(x => [x, x * 2]));
 // [1, 2, 2, 4, 3, 6]
 ```
-## `Object.fromEntries()`
+## 25.`Object.fromEntries()`
 
 It converts an array into an object.
 
@@ -436,7 +415,7 @@ const user = Object.fromEntries(entries);
 console.log(user); // { name: 'Rahul', age: 25 }
 ```
 
-## `String.trimStart()` / `String.trimEnd()`
+## 26. `String.trimStart()` / `String.trimEnd()`
 
 It is used to remove spaces from the start or end of a string.
 
@@ -447,7 +426,7 @@ console.log(text.trimStart()); // "Hello World   "
 console.log(text.trimEnd());   // "   Hello World"
 ```
 
-## Optional Catch Binding
+## 27. Optional Catch Binding
 
 We can remove the error parameter from the `catch` block if we do not need it.
 
@@ -466,7 +445,7 @@ try {
   console.log("Error");
 }
 ```
-## `Symbol.description`
+## 28.`Symbol.description`
 
 It is used to read the description of a Symbol.
 
@@ -476,7 +455,7 @@ const sym = Symbol("MySymbol");
 console.log(sym.description); // "MySymbol"
 ```
 
-## `JSON.stringify()` Improvements
+## 29.`JSON.stringify()` Improvements
 
 If it finds complex characters, it returns a valid JSON format.
 
@@ -490,7 +469,7 @@ console.log(JSON.stringify(badString));
 // Output: "\ud800"
 ```
 
-## `globalThis`
+## 30. `globalThis`
 
 It provides a standard way to access the global object.
 
@@ -498,7 +477,7 @@ It provides a standard way to access the global object.
 console.log(globalThis); // Browser: window, Node: global
 ```
 
-## `Promise.allSettled()`
+## 31.`Promise.allSettled()`
 
 It waits for all promises to complete and returns their results.
 
@@ -510,11 +489,11 @@ Promise.allSettled([p1, p2])
   .then((results) => console.log(results));
 ```
 
-## `BigInt`
+## 32. `BigInt`
 
 It is a primitive datatype used to store large numbers.
 
-## Nullish Coalescing Operator (`??`)
+## 33.Nullish Coalescing Operator (`??`)
 
 It is used to provide a default value when the value is `null` or `undefined`.
 
@@ -528,7 +507,7 @@ console.log(count || 10); // 10
 console.log(count ?? 10); // 0
 ```
 
-## Optional Chaining (`?.`)
+## 34.Optional Chaining (`?.`)
 
 It is used to access nested object values safely. If the value does not exist, it returns `undefined` instead of crashing the application.
 
@@ -538,7 +517,7 @@ const user = { name: "Rahul", address: { city: "Delhi" } };
 console.log(user?.address?.zip); // undefined
 ```
 
-## Logical Assignment Operators (`||=`, `&&=`, `??=`)
+## 35. Logical Assignment Operators (`||=`, `&&=`, `??=`)
 
 ```javascript
 // 1. OR Assignment (||=)
@@ -561,7 +540,7 @@ let c = null;
 c ??= 20; // if null or undefined, assign 20
 console.log(c); // 20
 ```
-## `String.replaceAll()`
+## 36.`String.replaceAll()`
 
 It is used to replace all occurrences of a word with a new word.
 
@@ -572,7 +551,7 @@ console.log(text.replaceAll("JS", "Python"));
 // "Python is great. I love Python."
 ```
 
-## `Promise.any()`
+## 37.`Promise.any()`
 
 It returns the result of the first resolved promise.
 
@@ -591,7 +570,7 @@ Promise.any([p1, p2])
 // Output: "P2"
 ```
 
-## Numeric Separators (`_` in numbers)
+## 38.Numeric Separators (`_` in numbers)
 
 It helps to add `_` in numbers for better readability.
 
@@ -603,7 +582,7 @@ const easyBudget = 1_000_000_000;
 console.log(easyBudget);
 ```
 
-## Class Field Declarations / Private Class Features (`#`)
+## 39.Class Field Declarations / Private Class Features (`#`)
 
 We can define class properties without using a constructor.
 
@@ -630,7 +609,7 @@ class BankAccount {
 }
 ```
 
-## Top-Level `await`
+## 40.Top-Level `await`
 
 We can use `await` without an `async` function (in modules) for data retrieval.
 
@@ -640,9 +619,8 @@ const data = await response.json();
 
 console.log(data);
 ```
-## `Array.at()` / `Object.hasOwn()`
 
-### `Array.at()`
+### 41.`Array.at()`
 
 It returns the element at the given index.
 
@@ -653,7 +631,7 @@ console.log(arr.at(1));  // 20
 console.log(arr.at(-1)); // 40 (Last element)
 ```
 
-### `Object.hasOwn()`
+### 42.`Object.hasOwn()`
 
 It checks whether a property belongs to an object or not.
 
@@ -663,7 +641,7 @@ const person = { name: "Rahul" };
 console.log(Object.hasOwn(person, "name")); // true
 ```
 
-## Error Cause
+## 43. Error Cause
 
 It displays the reason for an error using the `cause` property.
 
@@ -676,7 +654,7 @@ try {
 }
 ```
 
-## Array Copying Methods (Non-mutating methods)
+## 44. Array Copying Methods (Non-mutating methods)
 
 Methods like `toSorted()`, `toReversed()`, `toSpliced()`, `with(index, value)`, `findLast()`, and `findLastIndex()` do not update the original array. They create a new array.
 
